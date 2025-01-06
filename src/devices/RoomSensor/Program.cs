@@ -1,14 +1,12 @@
 
-using System.Device.Gpio;
-
 namespace RoomSensor
 {
     public class Program
     {
-        private static GpioController s_GpioController;
+        // private static GpioController s_GpioController;
         public static void Main()
         {
-            s_GpioController = new GpioController();
+            // s_GpioController = new GpioController();
 
             // pick a board, uncomment one line for GpioPin; default is STM32F769I_DISCO
 
@@ -16,7 +14,7 @@ namespace RoomSensor
             //GpioPin led = s_GpioController.OpenPin(PinNumber('D', 15), PinMode.Output);
 
             // ESP32 DevKit: 4 is a valid GPIO pin in, some boards like Xiuxin ESP32 may require GPIO Pin 2 instead.
-            GpioPin led = s_GpioController.OpenPin(4, PinMode.Output);
+             //GpioPin led = s_GpioController.OpenPin(4, PinMode.Output);
 
             // FEATHER S2: 
             //GpioPin led = s_GpioController.OpenPin(13, PinMode.Output);
@@ -70,6 +68,7 @@ namespace RoomSensor
             // Aliexpress ESP32-WROOM32, GPIO2 - onboard not-power LED
             // GpioPin led = s_GpioController.OpenPin(2, PinMode.Output);
 
+            /*
             led.Write(PinValue.Low);
 
             while (true)
@@ -83,8 +82,10 @@ namespace RoomSensor
                 led.Toggle();
                 Thread.Sleep(525);
             }
+            */
         }
 
+        /*
         static int PinNumber(char port, byte pin)
         {
             if (port < 'A' || port > 'J')
@@ -92,5 +93,6 @@ namespace RoomSensor
 
             return ((port - 'A') * 16) + pin;
         }
+        */
     }
 }

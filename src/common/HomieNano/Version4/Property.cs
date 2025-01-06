@@ -10,7 +10,7 @@ namespace HomieNano.Version4
         private readonly RetainedAttribute _retainedAttribute;
         private readonly UnitAttribute _unitAttribute;
 
-        public Property(string topicId, string name, Node parent, DataType dataType, string format, bool settable, bool retained, string unit) 
+        public Property(string topicId, string name, Node parent, DataType dataType, string format = "", bool settable = false, bool retained = true, string unit = "") 
             : base(topicId, name, parent)
         {
             _dataTypeAttribute = new(this, dataType);
@@ -22,11 +22,11 @@ namespace HomieNano.Version4
 
         public DataTypeAttribute DataTypeAttribute => _dataTypeAttribute;
         
-        public FormatAttribute Format => _formatAttribute;
+        public FormatAttribute FormatAttribute => _formatAttribute;
         
-        public SettableAttribute Settable => _settableAttribute;
+        public SettableAttribute SettableAttribute => _settableAttribute;
         
-        public RetainedAttribute Retained => _retainedAttribute;
+        public RetainedAttribute RetainedAttribute => _retainedAttribute;
         
         public UnitAttribute Unit => _unitAttribute;
     }

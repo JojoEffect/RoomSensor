@@ -10,7 +10,7 @@
             _value = stringArray;
         }
 
-        public virtual string[] Value { get => _value; set => _value = value; }
+        public virtual string[] Value { get => _value; private set => _value = value; }
 
         public override string GetPayload()
         {
@@ -29,6 +29,25 @@
                 payload.Append(Value[i]);
             }
             return payload.ToString();
+        }
+
+        public void Add(string value)
+        {
+            if (Value == null)
+            {
+                Value = new string[1];
+                Value[0] = value;
+            }
+            else
+            {
+                var newValues = new string[Value.Length + 1];
+                for (int i = 0; i < Value.Length; i++)
+                {
+                    newValues[i] = Value[i];
+                }
+                newValues[Value.Length] = value;
+                Value = newValues;
+            }
         }
     }
 }
