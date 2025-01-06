@@ -21,7 +21,7 @@ Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "HomieNano", "src\common\Hom
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{CB660CC9-15A1-417F-A137-17D443DDD183}"
 EndProject
-Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "NFUnitTest", "NFUnitTest\NFUnitTest.nfproj", "{3DB6F529-DCCE-4845-9FE8-3E074A4D8A0D}"
+Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "NFUnitTest", "src\tests\NFUnitTest\NFUnitTest.nfproj", "{3DB6F529-DCCE-4845-9FE8-3E074A4D8A0D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
