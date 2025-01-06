@@ -1,16 +1,16 @@
 ﻿namespace HomieNano.Version4.Attributes
 {
-    internal abstract class StringArrayAttributeBase : AttributeBase
+    public abstract class StringArrayAttributeBase : AttributeBase
     {
         private string[] _value;
 
-        public StringArrayAttributeBase(string[] stringArray, string topicIdentifier, IHomieEntity parent)
+        public StringArrayAttributeBase(string topicIdentifier, IHomieEntity parent, string[] stringArray)
             : base(topicIdentifier, parent)
         {
             _value = stringArray;
         }
 
-        public virtual string[] Value { get => _value; protected set => _value = value; }
+        public virtual string[] Value { get => _value; set => _value = value; }
 
         public override string GetPayload()
         {

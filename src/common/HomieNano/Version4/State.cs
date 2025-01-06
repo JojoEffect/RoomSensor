@@ -1,7 +1,6 @@
-﻿
-namespace HomieNano.Version4.Attributes
+﻿namespace HomieNano.Version4
 {
-    internal enum State
+    public enum State
     {
         Init = 0,
         Ready = 1,

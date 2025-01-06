@@ -1,11 +1,10 @@
-﻿
-namespace HomieNano.Version4.Attributes
+﻿namespace HomieNano.Version4.Attributes
 {
-    internal class StateAttribute : AttributeBase
+    public class StateAttribute : AttributeBase
     {
         private readonly State _value;
 
-        public StateAttribute(State state, IHomieEntity parent)
+        public StateAttribute(IHomieEntity parent, State state)
             : base($"{Constants.AttributeIdentifierPrefix}state", parent)
         {
             _value = state;

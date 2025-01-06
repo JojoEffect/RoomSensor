@@ -1,10 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace HomieNano.Version4.Attributes
+﻿namespace HomieNano.Version4.Attributes
 {
-    internal class DataTypeAttribute
+    public class DataTypeAttribute : AttributeBase
     {
+        private readonly DataType _value;
+
+        public DataTypeAttribute(IHomieEntity parent, DataType dataType)
+            : base($"{Constants.AttributeIdentifierPrefix}datatype", parent)
+        {
+            _value = dataType;
+        }
+
+        public DataType Value => _value;
+
+        public override string GetPayload() => Value.ToString().ToLower();
     }
 }

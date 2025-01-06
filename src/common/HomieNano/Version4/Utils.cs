@@ -1,6 +1,6 @@
 ﻿namespace HomieNano.Version4
 {
-    internal static class Utils
+    public static class Utils
     {
         public static string[] GetTopicIds(IHomieEntity[] entities)
         {

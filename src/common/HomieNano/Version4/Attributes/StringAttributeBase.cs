@@ -1,10 +1,10 @@
 ﻿namespace HomieNano.Version4.Attributes
 {
-    internal abstract class StringAttributeBase : AttributeBase
+    public abstract class StringAttributeBase : AttributeBase
     {
         private string _value;
 
-        public StringAttributeBase(string value, string topicIdentifier, IHomieEntity parent)
+        public StringAttributeBase(string topicIdentifier, IHomieEntity parent, string value)
             : base(topicIdentifier, parent)
         {
             _value = value;

@@ -1,9 +1,9 @@
 ﻿namespace HomieNano.Version4.Attributes
 {
-    internal class ExtensionsAttribute : StringArrayAttributeBase
+    public class ExtensionsAttribute : StringArrayAttributeBase
     {
-        public ExtensionsAttribute(string[] extensions, IHomieEntity parent)
-            : base(extensions, $"{Constants.AttributeIdentifierPrefix}extensions", parent)
+        public ExtensionsAttribute(IHomieEntity parent, string[] extensions)
+            : base($"{Constants.AttributeIdentifierPrefix}extensions", parent, extensions)
         {
         }
     }

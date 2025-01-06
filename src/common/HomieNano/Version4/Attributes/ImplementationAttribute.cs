@@ -1,9 +1,9 @@
 ﻿namespace HomieNano.Version4.Attributes
 {
-    internal class ImplementationAttribute : StringAttributeBase
+    public class ImplementationAttribute : StringAttributeBase
     {
-        public ImplementationAttribute(string implementation, IHomieEntity parent)
-            : base(implementation, $"{Constants.AttributeIdentifierPrefix}implementation", parent)
+        public ImplementationAttribute(IHomieEntity parent, string implementation)
+            : base($"{Constants.AttributeIdentifierPrefix}implementation", parent, implementation)
         { 
         }
     }

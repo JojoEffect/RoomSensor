@@ -1,8 +1,6 @@
-﻿using System;
-
-namespace HomieNano.Version4
+﻿namespace HomieNano.Version4
 {
-    internal class Constants
+    public class Constants
     {
         public const string Version4 = "4.0.0";
         public const string TopicSeparator = "/";

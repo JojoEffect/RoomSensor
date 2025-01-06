@@ -2,7 +2,7 @@
 
 namespace HomieNano.Version4
 {
-    internal class Device : HomieEntityBase
+    public class Device : NamedHomieEntityBase
     {
         private readonly HomieAttribute _homieAttribute;
         private readonly NodesAttribute _nodesAttribute;
@@ -14,11 +14,11 @@ namespace HomieNano.Version4
         public Device(string topicId, string name, Node[] nodes, string[] extensions, string? implementation = "") 
             : base(topicId, name)
         {
-            _homieAttribute = new(Constants.Version4, this);
-            _nodesAttribute = new(Utils.GetTopicIds(nodes), this);
-            _stateAttribute = new(State.Init, this);
-            _extensionsAttribute = new(extensions, this);
-            _implementationAttribute = implementation is not null ? new(implementation, this) : null;
+            _homieAttribute = new(this, Constants.Version4);
+            _nodesAttribute = new(this, Utils.GetTopicIds(nodes));         
+            _stateAttribute = new(this, State.Init);
+            _extensionsAttribute = new(this, extensions);
+            _implementationAttribute = implementation is not null ? new(this, implementation) : null;
 
             _nodes = nodes;
         }

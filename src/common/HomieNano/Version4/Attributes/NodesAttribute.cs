@@ -2,10 +2,10 @@
 
 namespace HomieNano.Version4.Attributes
 {
-    internal class NodesAttribute : StringArrayAttributeBase
+    public class NodesAttribute : StringArrayAttributeBase
     {
-        public NodesAttribute(string[] nodes, IHomieEntity parent) 
-            : base(nodes, $"{Constants.AttributeIdentifierPrefix}nodes", parent)
+        public NodesAttribute(IHomieEntity parent, string[] nodes) 
+            : base($"{Constants.AttributeIdentifierPrefix}nodes", parent, nodes)
         {
         }
     }

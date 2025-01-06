@@ -2,7 +2,7 @@
 
 namespace HomieNano.Version4
 {
-    internal class Node : HomieEntityBase
+    public class Node : NamedHomieEntityBase
     {
         private readonly PropertiesAttribute _propertiesAttribute;
         private readonly TypeAttribute _typeAttribute;
@@ -11,8 +11,8 @@ namespace HomieNano.Version4
         public Node(string topicId, string name, Device parent, string type, Property[] properties)
             : base(topicId, name, parent)
         {
-            _typeAttribute = new TypeAttribute(type, this);
-            _propertiesAttribute = new(Utils.GetTopicIds(properties), this);
+            _typeAttribute = new TypeAttribute(this, type);
+            _propertiesAttribute = new(this, Utils.GetTopicIds(properties));
 
             _properties = properties;
         }

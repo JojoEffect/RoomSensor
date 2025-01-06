@@ -1,8 +1,6 @@
-﻿using System;
-
-namespace HomieNano.Version4
+﻿namespace HomieNano.Version4
 {
-    internal interface IHomieEntity
+    public interface IHomieEntity
     {
         public IHomieEntity? Parent { get; }
 

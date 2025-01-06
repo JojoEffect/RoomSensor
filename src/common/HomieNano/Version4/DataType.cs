@@ -1,6 +1,6 @@
 ﻿namespace HomieNano.Version4
 {
-    internal enum DataType
+    public enum DataType
     {
         Integer,
         Float,
