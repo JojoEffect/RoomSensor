@@ -9,6 +9,7 @@ namespace NFUnitTest
     {
         private const string _testDeviceTopicId = "super-car";
         private const string _testDeviceName = "Super car";
+        //private HomieDeviceBuilder _builder = new(_testDeviceTopicId, _testDeviceName, new string[0]);
 
         [TestMethod]
         public void Device_GetTopic_Valid()
@@ -16,11 +17,13 @@ namespace NFUnitTest
             // Act
 
             // this works....
-            var device = new Device(_testDeviceTopicId, _testDeviceName, new string[1]);
-
-            // this doesn't work....
             //var builder = new HomieDeviceBuilder(_testDeviceTopicId, _testDeviceName, new string[0]);
             //var device = builder.BuildDevice();
+
+            // this doesn't work....
+            //var device = _builder.BuildDevice();
+            var device = new Device(_testDeviceTopicId, _testDeviceName, new string[1]);
+
 
             var expectedTopic = CreateExpectedTopicFrom(device);
 
@@ -29,7 +32,7 @@ namespace NFUnitTest
         }
 
         
-        /*
+        
         [TestMethod]
         public void Node_GetTopic_Valid()
         {
@@ -54,7 +57,7 @@ namespace NFUnitTest
             Assert.AreEqual(expectedType, node.TypeAttribute.Value);
             Assert.AreEqual(expectedTopic, device.Nodes[0].GetTopic());
         }
-        */
+        
 
         private string CreateExpectedTopicFrom(Device device)
         {
